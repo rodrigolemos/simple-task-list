@@ -5,12 +5,23 @@ import List from '../List';
 import { Container } from './styles';
 
 class App extends Component {
+  state = {
+    loading: 'no',
+    tasks: [],
+  };
+
+  updateTasks = (newTask) => {
+    this.setState({
+      tasks: [...this.state.tasks, newTask]
+    });
+  }
+
   render() {
     return (
       <>
         <Container>
           <aside className="form">
-            <Form/>
+            <Form update={this.updateTasks}/>
           </aside>
           <main className="list">
             <List/>

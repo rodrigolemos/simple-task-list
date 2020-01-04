@@ -1,20 +1,40 @@
 import React, { Component } from 'react';
+import { MdPlaylistAdd } from "react-icons/md";
 import { MyForm } from './styles';
 
 export default class Form extends Component {
+  state = {
+    newTask: '',
+  };
+
+  handleInputChange = e => {
+    this.setState({
+      newTask: e.target.value
+    });
+  }
+
+  addTask = () => {
+    this.props.update(this.state.newTask);
+
+    this.setState({
+      newTask: ''
+    });
+  }
+
   render() {
     return (
       <MyForm>
-        <h1 className="heading-form">
-          Simple task list
-        </h1>
+        <div className="heading-form">
+          <h1>Simple task list</h1>
+          <MdPlaylistAdd size={35}/>
+        </div>
         <label htmlFor="task">Task</label>
-        <input type="text" name="task" id="task" placeholder="Please enter a task name"/>
+        <input type="text" name="task" id="task" placeholder="Please enter a task name"
+          value={this.state.newTask}
+          onChange={this.handleInputChange}
+        />
 
-        <label htmlFor="due">Due to</label>
-        <input type="date" name="due" id="due"/>
-
-        <button type="button">Add</button>
+        <button type="button" onClick={() => this.addTask()}>Add</button>
       </MyForm>
     );
   }
