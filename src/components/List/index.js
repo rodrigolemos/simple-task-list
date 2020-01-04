@@ -2,8 +2,13 @@ import React, { Component } from 'react';
 
 export default class List extends Component {
   render() {
+    const tasks = this.props.tasks;
     return (
-      <span>List</span>
+      <ul>
+        {tasks.map((task, i) => (
+          <li key={i}>{task.name}</li>
+        ))}
+      </ul>
     );
   }
 }

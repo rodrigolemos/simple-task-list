@@ -24,7 +24,7 @@ class App extends Component {
             <Form update={this.updateTasks}/>
           </aside>
           <main className="list">
-            <List/>
+            <List tasks={this.state.tasks}/>
           </main>
         </Container>
         <GlobalStyle/>

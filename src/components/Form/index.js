@@ -4,20 +4,27 @@ import { MyForm } from './styles';
 
 export default class Form extends Component {
   state = {
-    newTask: '',
+    name: '',
+    description: '',
   };
 
-  handleInputChange = e => {
+  handleTaskChange = e => {
     this.setState({
-      newTask: e.target.value
+      name: e.target.value
+    });
+  }
+
+  handleDescChange = e => {
+    this.setState({
+      description: e.target.value
     });
   }
 
   addTask = () => {
-    this.props.update(this.state.newTask);
-
+    this.props.update(this.state);
     this.setState({
-      newTask: ''
+      name: '',
+      description: '',
     });
   }
 
@@ -29,9 +36,19 @@ export default class Form extends Component {
           <MdPlaylistAdd size={35}/>
         </div>
         <label htmlFor="task">Task</label>
-        <input type="text" name="task" id="task" placeholder="Please enter a task name"
-          value={this.state.newTask}
-          onChange={this.handleInputChange}
+        <input
+          type="text"
+          placeholder="Please enter a task name"
+          value={this.state.name}
+          onChange={this.handleTaskChange}
+        />
+
+        <label htmlFor="desc">Description</label>
+        <input
+          type="text"
+          placeholder="Please enter a short description"
+          value={this.state.description}
+          onChange={this.handleDescChange}
         />
 
         <button type="button" onClick={() => this.addTask()}>Add</button>
