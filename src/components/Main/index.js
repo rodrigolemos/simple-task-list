@@ -6,7 +6,6 @@ import { Container } from './styles';
 
 class App extends Component {
   state = {
-    loading: 'no',
     tasks: [],
   };
 
