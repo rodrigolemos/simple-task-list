@@ -23,7 +23,7 @@ export default createGlobalStyle`
     @media only screen and (max-width: 768px) {
       & {
         align-items: flex-start;
-        margin-top: 100px;
+        margin-top: 10px;
       }
     }
   }

@@ -12,7 +12,7 @@ export const MyForm = styled.form`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 40px;
+    margin-bottom: 5%;
     font-size: 20px;
 
     svg {
@@ -35,7 +35,7 @@ export const MyForm = styled.form`
     width: 100%;
     height: 40px;
     padding: 12px;
-    margin-bottom: 35px;
+    margin-bottom: 7%;
     border-radius: 3px;
     border: 1px solid #DDD;
     transition: border-color .2s ease-in-out;
