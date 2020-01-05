@@ -12,6 +12,7 @@ export const Container = styled.div`
     & {
       display: block;
       height: 50vh;
+      min-height: 370px;
       width: 90vw;
     }
   }
