@@ -5,15 +5,14 @@ import { MyList, Empty } from './styles';
 
 export default class List extends Component {
   render() {
-    const tasks = this.props.tasks;
+    const { tasks, remove } = this.props;
     const items = tasks.map((task, i) => (
       <li key={i}>
         <div className="title">
-          <MdCheckCircle size={30}/>
           <h2>
             {task.name}
           </h2>
-          <span onClick={() => this.props.remove(task.name)}>X</span>
+          <MdCheckCircle size={30} onClick={() => remove(task.name)}/>
         </div>
         <p>{task.description}</p>
       </li>

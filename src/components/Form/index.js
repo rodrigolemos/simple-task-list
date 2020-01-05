@@ -9,15 +9,9 @@ export default class Form extends Component {
     description: '',
   };
 
-  handleTaskChange = e => {
+  handleInputChange = e => {
     this.setState({
-      name: e.target.value
-    });
-  }
-
-  handleDescChange = e => {
-    this.setState({
-      description: e.target.value
+      [e.target.id]: e.target.value
     });
   }
 
@@ -33,7 +27,8 @@ export default class Form extends Component {
       });
       return;
     }
-    this.props.update(this.state);
+    const { update } = this.props;
+    update(this.state);
     this.setState({
       name: '',
       description: '',
@@ -47,20 +42,22 @@ export default class Form extends Component {
           <h1>Simple task list</h1>
           <MdExtension size={35}/>
         </div>
-        <label htmlFor="task">Task</label>
+        <label htmlFor="name">Task</label>
         <input
           type="text"
+          id="name"
           placeholder="Please enter a task name"
           value={this.state.name}
-          onChange={this.handleTaskChange}
+          onChange={this.handleInputChange}
         />
 
-        <label htmlFor="desc">Description</label>
+        <label htmlFor="description">Description</label>
         <input
           type="text"
+          id="description"
           placeholder="Please enter a short description"
           value={this.state.description}
-          onChange={this.handleDescChange}
+          onChange={this.handleInputChange}
         />
 
         <button type="button" onClick={() => this.addTask()}>Add</button>

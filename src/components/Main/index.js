@@ -21,25 +21,29 @@ class App extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    if (prevState.tasks !== this.state.tasks) {
-      localStorage.setItem('tasks', JSON.stringify(this.state.tasks));
+    const { tasks } = this.state;
+    if (prevState.tasks !== tasks) {
+      localStorage.setItem('tasks', JSON.stringify(tasks));
     }
   }
 
   updateTasks = (newTask) => {
+    const { tasks } = this.state;
     this.setState({
-      tasks: [...this.state.tasks, newTask]
+      tasks: [...tasks, newTask]
     });
   }
 
   
   removeTask = (ptask) => {
+    const { tasks } = this.state;
     this.setState({
-      tasks: this.state.tasks.filter(task => task.name !== ptask)
+      tasks: tasks.filter(task => task.name !== ptask)
     })
   }
 
   render() {
+    const { tasks } = this.state;
     return (
       <>
         <Container>
@@ -47,7 +51,7 @@ class App extends Component {
             <Form update={this.updateTasks}/>
           </aside>
           <main className="list">
-            <List tasks={this.state.tasks} remove={this.removeTask}/>
+            <List tasks={tasks} remove={this.removeTask}/>
           </main>
         </Container>
         <ToastContainer />

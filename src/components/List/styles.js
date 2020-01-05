@@ -64,17 +64,11 @@ export const MyList = styled.ul`
 
       svg {
         color: #3CD7D5;
+        cursor: pointer;
       }
 
       h2 {
         font-size: 20px;
-      }
-
-      span {
-        font-size: 12px;
-        border-radius: 2px;
-        padding: 3px 6px;
-        cursor: pointer;
       }
     }
 
