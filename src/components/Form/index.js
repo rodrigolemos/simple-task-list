@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { MdPlaylistAdd } from "react-icons/md";
+import { toast } from 'react-toastify';
+import { MdExtension } from "react-icons/md";
 import { MyForm } from './styles';
 
 export default class Form extends Component {
@@ -21,6 +22,17 @@ export default class Form extends Component {
   }
 
   addTask = () => {
+    if (!this.state.name || !this.state.description) {
+      toast.error('Please enter a name and a short description for the task.', {
+        position: 'top-left',
+        autoClose: 4000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+      });
+      return;
+    }
     this.props.update(this.state);
     this.setState({
       name: '',
@@ -33,7 +45,7 @@ export default class Form extends Component {
       <MyForm>
         <div className="heading-form">
           <h1>Simple task list</h1>
-          <MdPlaylistAdd size={35}/>
+          <MdExtension size={35}/>
         </div>
         <label htmlFor="task">Task</label>
         <input

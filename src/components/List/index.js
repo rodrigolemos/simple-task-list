@@ -33,7 +33,7 @@ export default class List extends Component {
           </MyList>
         ) : (
           <Empty>
-            <h3 class="empty">Empty list</h3>
+            <h3 className="empty">Empty list</h3>
             <MdThumbUp size={55}/>
           </Empty>
         )}

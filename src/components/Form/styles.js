@@ -14,6 +14,10 @@ export const MyForm = styled.form`
     align-items: center;
     margin-bottom: 40px;
     font-size: 20px;
+
+    svg {
+      color: #4345ED;
+    }
   }
 
   input, button {

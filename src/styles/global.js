@@ -18,5 +18,6 @@ export default createGlobalStyle`
     align-items: center;
     justify-content: center;
     height: 100vh;
+    -webkit-font-smoothing: antialiased !important;
   }
 `;

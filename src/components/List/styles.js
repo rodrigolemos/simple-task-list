@@ -2,21 +2,25 @@ import styled from 'styled-components';
 
 export const MyList = styled.ul`
   .include-enter {
-    opacity: 0.01;
+    opacity: 0;
+    transform: translateX(-100px);
   }
 
   .include-enter.include-enter-active {
     opacity: 1;
-    transition: opacity 300ms ease-in;
+    transform: translateX(0);
+    transition: all 500ms ease-in;
   }
 
   .include-leave {
     opacity: 1;
+    transform: translateX(0);
   }
 
   .include-leave.include-leave-active {
-    opacity: 0.01;
-    transition: opacity 150ms ease-in;
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: all 500ms ease-in;
   }
 
   span {
@@ -33,6 +37,7 @@ export const MyList = styled.ul`
     border-radius: 2px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, .1);
     transition: all .2s ease-in-out;
+    cursor: default;
 
     &:hover {
       transform: scale(1.03);
@@ -58,7 +63,6 @@ export const MyList = styled.ul`
         font-size: 12px;
         border-radius: 2px;
         padding: 3px 6px;
-        background-color: #EEE;
         cursor: pointer;
       }
     }

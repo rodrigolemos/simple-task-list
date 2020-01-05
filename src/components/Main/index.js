@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import GlobalStyle from '../../styles/global';
 import Form from '../Form';
 import List from '../List';
@@ -48,6 +50,7 @@ class App extends Component {
             <List tasks={this.state.tasks} remove={this.removeTask}/>
           </main>
         </Container>
+        <ToastContainer />
         <GlobalStyle/>
       </>
     );
