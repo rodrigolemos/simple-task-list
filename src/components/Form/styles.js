@@ -4,7 +4,7 @@ export const MyForm = styled.form`
   width: 80%;
   height: 65%;
   position: absolute;
-  top: 55%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
 

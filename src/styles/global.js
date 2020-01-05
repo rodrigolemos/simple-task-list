@@ -19,5 +19,12 @@ export default createGlobalStyle`
     justify-content: center;
     height: 100vh;
     -webkit-font-smoothing: antialiased !important;
+
+    @media only screen and (max-width: 768px) {
+      & {
+        align-items: flex-start;
+        margin-top: 100px;
+      }
+    }
   }
 `;

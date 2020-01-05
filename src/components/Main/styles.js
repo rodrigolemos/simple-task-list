@@ -8,6 +8,14 @@ export const Container = styled.div`
   box-shadow: 0 10px 50px rgba(0, 0, 0, .1);
   display: flex;
 
+  @media only screen and (max-width: 768px) {
+    & {
+      display: block;
+      height: 50vh;
+      width: 90vw;
+    }
+  }
+
   aside {
     background-color: #FFF;
     width: 35%;
@@ -16,10 +24,24 @@ export const Container = styled.div`
     align-items: center;
     justify-content: center;
     position: relative;
+
+    @media only screen and (max-width: 768px) {
+      & {
+        display: block;
+        width: 100%;
+      }
+    }
   }
 
   main {
     width: 65%;
     height: 100%;
+
+    @media only screen and (max-width: 768px) {
+      & {
+        display: block;
+        width: 100%;
+      }
+    }
   }
 `;

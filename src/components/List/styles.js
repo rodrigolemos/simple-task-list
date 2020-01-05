@@ -39,6 +39,17 @@ export const MyList = styled.ul`
     transition: all .2s ease-in-out;
     cursor: default;
 
+    @media only screen and (max-width: 768px) {
+      & {
+        display: block;
+        width: 100%;
+        margin: 10px 0 0;
+      }
+      &:last-child {
+        margin-bottom: 10px;
+      }
+    }
+
     &:hover {
       transform: scale(1.03);
       box-shadow: 0 4px 15px rgba(0, 0, 0, .2);
@@ -88,5 +99,11 @@ export const Empty = styled.div`
 
   svg {
     margin-left: 15px;
+  }
+
+  @media only screen and (max-width: 768px) {
+    & {
+      display: none;
+    }
   }
 `;
