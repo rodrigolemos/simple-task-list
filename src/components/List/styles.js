@@ -7,7 +7,7 @@ export const MyList = styled.ul`
 
   .include-enter.include-enter-active {
     opacity: 1;
-    transition: opacity 500ms ease-in;
+    transition: opacity 300ms ease-in;
   }
 
   .include-leave {
@@ -16,7 +16,7 @@ export const MyList = styled.ul`
 
   .include-leave.include-leave-active {
     opacity: 0.01;
-    transition: opacity 300ms ease-in;
+    transition: opacity 150ms ease-in;
   }
 
   span {
@@ -49,10 +49,40 @@ export const MyList = styled.ul`
       svg {
         color: #3CD7D5;
       }
+
+      h2 {
+        font-size: 20px;
+      }
+
+      span {
+        font-size: 12px;
+        border-radius: 2px;
+        padding: 3px 6px;
+        background-color: #EEE;
+        cursor: pointer;
+      }
     }
 
     p {
       padding: 5px;
     }
+  }
+`;
+
+export const Empty = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #64759e;
+  opacity: 0.4;
+  
+  h3 {
+    font-size: 40px;
+  }
+
+  svg {
+    margin-left: 15px;
   }
 `;

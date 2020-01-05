@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'; 
-import { MdCheckCircle } from "react-icons/md";
-import { MyList } from './styles';
+import { MdCheckCircle, MdThumbUp } from "react-icons/md";
+import { MyList, Empty } from './styles';
 
 export default class List extends Component {
   render() {
@@ -20,15 +20,24 @@ export default class List extends Component {
     ));
 
     return (
-      <MyList>
-        <ReactCSSTransitionGroup
-          transitionName="include"
-          transitionEnterTimeout={400}
-          transitionLeaveTimeout={200}
-        >
-        {items}
-        </ReactCSSTransitionGroup>
-      </MyList>
+      <>
+        { tasks.length ? (
+          <MyList>
+            <ReactCSSTransitionGroup
+              transitionName="include"
+              transitionEnterTimeout={300}
+              transitionLeaveTimeout={100}
+            >
+            {items}
+            </ReactCSSTransitionGroup>
+          </MyList>
+        ) : (
+          <Empty>
+            <h3 class="empty">Empty list</h3>
+            <MdThumbUp size={55}/>
+          </Empty>
+        )}
+      </>
     );
   }
 }
